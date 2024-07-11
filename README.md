@@ -35,6 +35,8 @@ Se o saldo for suficiente, o saque é realizado e uma mensagem de confirmação 
 Verificação se o valor a ser transferido é maior que o saldo disponível. Se for, uma mensagem de erro é exibida.
 Se o saldo for suficiente, a transferência é realizada (sacar e depositar no destino) e uma mensagem de confirmação é exibida.
 Adicionado um método getNumero() na interface IConta para que o número da conta de destino possa ser exibido na mensagem de confirmação.
-Exemplo de Uso
 
-### Ao executar o método main, se a transferência for bem-sucedida, as mensagens de confirmação serão exibidas no console. Se o saldo for insuficiente para alguma operação, a respectiva mensagem de erro será exibida.
+
+###Exemplo de Uso
+
+Ao executar o método main, se a transferência for bem-sucedida, as mensagens de confirmação serão exibidas no console. Se o saldo for insuficiente para alguma operação, a respectiva mensagem de erro será exibida.
