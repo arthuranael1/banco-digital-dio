@@ -16,3 +16,27 @@ Permite que você defina uma classe filha que reutiliza (herda), estende ou modi
 
 ### Polimorfismo
 Capacidade de um objeto poder ser referenciado de várias formas, ou seja, é capacidade de tratar objetos criados a partir das classes específicas como objetos de uma classe genérica. Cuidado, polimorfismo não quer dizer que o objeto fica se transformando, muito pelo contrário, um objeto nasce de um tipo e morre daquele tipo, o que pode mudar é a maneira como nos referimos a ele.
+
+
+### Descrição do Desafio
+
+Reforce seu conhecimento em Programação Orientada a Objetos (POO) em Java com um desafio de projeto totalmente prático. Para isso, os pilares da orientação a objetos são devidamente explorados no contexto bancário, onde o expert implementa um projeto de referência (disponibilizado no GitHub) de forma prática e interativa. Sendo assim, você poderá desenvolver sua capacidade de abstração reproduzindo essa solução. Além disso, caso queira ir além, implemente suas próprias evoluções e melhorias ;)
+
+
+### Explicação das Melhorias
+
+### Validação de Saque:
+
+Verificação se o valor a ser sacado é maior que o saldo disponível. Se for, uma mensagem de erro é exibida.
+Se o saldo for suficiente, o saque é realizado e uma mensagem de confirmação é exibida.
+
+### Validação de Transferência:
+
+Verificação se o valor a ser transferido é maior que o saldo disponível. Se for, uma mensagem de erro é exibida.
+Se o saldo for suficiente, a transferência é realizada (sacar e depositar no destino) e uma mensagem de confirmação é exibida.
+Adicionado um método getNumero() na interface IConta para que o número da conta de destino possa ser exibido na mensagem de confirmação.
+
+
+###Exemplo de Uso
+
+Ao executar o método main, se a transferência for bem-sucedida, as mensagens de confirmação serão exibidas no console. Se o saldo for insuficiente para alguma operação, a respectiva mensagem de erro será exibida.
