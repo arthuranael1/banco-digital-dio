@@ -1,24 +1,19 @@
 import java.util.List;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+
 public class Banco {
 
-	private String nome;
-	private List<Conta> contas;
+    private String nome;
+    private List<Conta> contas;
+    private String moedaOficial = "$ Dólar Americano $";
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public List<Conta> getContas() {
-		return contas;
-	}
-
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
-	}
+    void setNome(String banco_XYZ) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
 }

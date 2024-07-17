@@ -1,4 +1,8 @@
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class ContaPoupanca extends Conta {
 
 	public ContaPoupanca(Cliente cliente) {
@@ -7,7 +11,7 @@ public class ContaPoupanca extends Conta {
 
 	@Override
 	public void imprimirExtrato() {
-		System.out.println("=== Extrato Conta Poupança ===");
+		System.out.println("=== Extrato Conta PoupanÃ§a ===");
 		super.imprimirInfosComuns();
 	}
 }
