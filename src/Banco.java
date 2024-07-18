@@ -21,4 +21,8 @@ public class Banco {
 		this.contas = contas;
 	}
 
+	public void imprimirContas() {
+		contas.forEach(System.out::println);
+	}
+
 }
