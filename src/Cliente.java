@@ -3,7 +3,11 @@ public class Cliente {
 
 	private String nome;
 
-	public String getNome() {
+	public Cliente(String string, String string2) {
+        //
+    }
+
+    public String getNome() {
 		return nome;
 	}
 

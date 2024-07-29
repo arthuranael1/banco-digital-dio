@@ -1,14 +1,17 @@
-
 public class ContaCorrente extends Conta {
+    private double taxaManutencao;
 
-	public ContaCorrente(Cliente cliente) {
-		super(cliente);
-	}
+    public ContaCorrente(String numeroConta, Cliente cliente, double taxaManutencao) {
+        super(numeroConta, cliente);
+        this.taxaManutencao = taxaManutencao;
+    }
 
-	@Override
-	public void imprimirExtrato() {
-		System.out.println("=== Extrato Conta Corrente ===");
-		super.imprimirInfosComuns();
-	}
-	
+    public void cobrarTaxa() {
+        sacar(taxaManutencao);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " [Taxa de Manutenção: " + taxaManutencao + "]";
+    }
 }

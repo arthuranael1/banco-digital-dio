@@ -1,18 +1,78 @@
-# Criando um Banco Digital com Java e Orientação a Objetos
+# Diagrama de Classes
 
-## 02/08/2021 - [Mentoria #1: Tire Suas Dúvidas Sobre Orientação a Objetos](https://www.youtube.com/watch?v=YS6ouOhkyNI)
+```mermaid
+classDiagram
+    class Banco {
+        - String nome
+        - List~IConta~ contas
+        + getInstancia(String nome): Banco
+        + adicionarConta(IConta conta): void
+        + buscarContaPorNumero(String numeroConta): IConta
+    }
 
-Desafio: Considerando nosso conhecimento no domínio bancário, iremos abstrair uma solução Orientada a Objetos em Java. Para isso, vamos interpretar o seguinte cenário:
-“Um banco oferece aos seus clientes dois tipos de contas (corrente e poupança), as quais possuem as funcionalidades de depósito, saque e transferência (entre contas da própria instituição).”
+    class Cliente {
+        - String nome
+        + getNome(): String
+        + setNome(String nome): void
+    }
 
-### Abstração
-Habilidade de concentrar-se nos aspectos essenciais de um domínio, ignorando características menos importantes ou acidentais. Nesse contexto, objetos são abstrações de entidades existentes no domínio em questão.
+    class IConta {
+        + depositar(double valor): void
+        + sacar(double valor): void
+        + transferir(IConta contaDestino, double valor): void
+        + getSaldo(): double
+    }
 
-### Encapsulamento
-Encapsular significa esconder a implementação dos objetos, criando assim interfaces de uso mais concisas e fáceis de usar/entender. O encapsulamento favorece principalmente dois aspectos de um sistema: a manutenção e a evolução.
+    class Conta {
+        - String numeroConta
+        - double saldo
+        - Cliente cliente
+        + getNumeroConta(): String
+        + getCliente(): Cliente
+        + getSaldo(): double
+        + depositar(double valor): void
+        + sacar(double valor): void
+        + transferir(IConta contaDestino, double valor): void
+    }
 
-### Herança
-Permite que você defina uma classe filha que reutiliza (herda), estende ou modifica o comportamento de uma classe pai. A classe cujos membros são herdados é chamada de classe base. A classe que herda os membros da classe base é chamada de classe derivada.
+    class ContaCorrente {
+        - TaxaManutencaoStrategy taxaManutencaoStrategy
+        + cobrarTaxa(): void
+    }
 
-### Polimorfismo
-Capacidade de um objeto poder ser referenciado de várias formas, ou seja, é capacidade de tratar objetos criados a partir das classes específicas como objetos de uma classe genérica. Cuidado, polimorfismo não quer dizer que o objeto fica se transformando, muito pelo contrário, um objeto nasce de um tipo e morre daquele tipo, o que pode mudar é a maneira como nos referimos a ele.
+    class ContaPoupanca {
+        - double taxaRendimento
+        + aplicarRendimento(): void
+    }
+
+    class TaxaManutencaoStrategy {
+        + cobrarTaxa(ContaCorrente conta): void
+    }
+
+    class TaxaManutencaoFixa {
+        - double taxa
+        + cobrarTaxa(ContaCorrente conta): void
+    }
+
+    class ContaFactory {
+        + criarConta(String numeroConta, Cliente cliente): Conta
+    }
+
+    class ContaCorrenteFactory {
+        - double taxaManutencao
+        + criarConta(String numeroConta, Cliente cliente): Conta
+    }
+
+    class ContaPoupancaFactory {
+        - double taxaRendimento
+        + criarConta(String numeroConta, Cliente cliente): Conta
+    }
+
+    Banco --> "1" IConta : contas
+    ContaCorrente ..|> Conta
+    ContaPoupanca ..|> Conta
+    ContaCorrenteFactory ..|> ContaFactory
+    ContaPoupancaFactory ..|> ContaFactory
+    TaxaManutencaoFixa ..|> TaxaManutencaoStrategy
+    Conta --> IConta
+    ContaCorrente --> TaxaManutencaoStrategy : usa

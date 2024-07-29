@@ -1,13 +1,18 @@
-
 public class ContaPoupanca extends Conta {
+    private double taxaRendimento;
 
-	public ContaPoupanca(Cliente cliente) {
-		super(cliente);
-	}
+    public ContaPoupanca(String numeroConta, Cliente cliente, double taxaRendimento) {
+        super(numeroConta, cliente);
+        this.taxaRendimento = taxaRendimento;
+    }
 
-	@Override
-	public void imprimirExtrato() {
-		System.out.println("=== Extrato Conta Poupança ===");
-		super.imprimirInfosComuns();
-	}
+    public void aplicarRendimento() {
+        double rendimento = getSaldo() * taxaRendimento;
+        depositar(rendimento);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " [Taxa de Rendimento: " + taxaRendimento + "]";
+    }
 }
