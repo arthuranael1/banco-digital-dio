@@ -5,7 +5,7 @@ public class Banco {
 	
 	private List<Cliente> clientes;
 	private List<Conta> contas;
-	private static final String AGENCIA_PADRAO = "1";
+	private static final String AGENCIA_PADRAO = "01";
 	private int contadorContas = 1;
 
 	public Banco() {
@@ -15,10 +15,10 @@ public class Banco {
 
 	public void adicionarCliente(Cliente cliente) {
 		this.clientes.add(cliente);
-		String numeroContaCorrente = String.valueOf(contadorContas);
-		String numeroContaPoupanca = String.valueOf(contadorContas);
+		String numeroContaCorrente = String.valueOf(contadorContas++);
+		String numeroContaPoupanca = String.valueOf(contadorContas++);
 		
-		ContaCorrente cc = new ContaCorrente(AGENCIA_PADRAO, numeroContaPoupanca, 1000.0);
+		ContaCorrente cc = new ContaCorrente(AGENCIA_PADRAO, numeroContaCorrente, 1000.0);
 		ContaPoupanca cp = new ContaPoupanca(AGENCIA_PADRAO, numeroContaPoupanca);
 
 		this.contas.add(cc);
