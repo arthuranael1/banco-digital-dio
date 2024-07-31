@@ -24,11 +24,7 @@ public abstract class Conta implements IConta {
 	}
 
 	@Override
-	public void transferir(double valor, IConta contaDestino) {
-		this.sacar(valor);
-		contaDestino.depositar(valor);
-		extrato.add("Transferência de R$ " + valor + " Saldo: R$ "+ saldo);
-	}
+	public abstract void transferir(double valor, IConta contaDestino);
 
 	public String getAgencia() {
 		return agencia;
