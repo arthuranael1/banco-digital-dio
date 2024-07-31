@@ -25,7 +25,7 @@ public class Banco {
 		this.contas.add(cp);
 
 		System.out.println("Conta Corrente e Poupança criadas com sucesso para o cliente " + cliente.getNome() + ".");
-		System.out.println("Número da Conta Corrente; " + numeroContaCorrente);
+		System.out.println("Número da Conta Corrente: " + numeroContaCorrente);
 		System.out.println("Número da Conta Poupança: " + numeroContaPoupanca);
 	}
 
@@ -61,9 +61,9 @@ public class Banco {
 		}
 
 		System.out.println("======Extrato======");
-		System.out.println("====Conta Corrente====");
+		System.out.println("----Conta Corrente----");
 		contaCorrente.imprimirExtrato();
-		System.out.println("====Conta Poupança====");
+		System.out.println("----Conta Poupança----");
 		contaPoupança.imprimirExtrato();
 	}
 

@@ -80,6 +80,7 @@ public class Main {
 					Conta contaSaque = banco.buscarContaPorAgenciaENumero(agenciaSaque, numeroSaque);
 					if (contaSaque != null) {
 						contaSaque.sacar(valorSaque);
+						System.out.println("Saque realizado com sucesso!");
 					} else {
 						System.out.println("Conta não encontrada");
 					}
@@ -89,13 +90,13 @@ public class Main {
 					String agenciaTrasnf = scanner.nextLine();
 					System.out.print("Número da Conta: ");
 					String numeroTrasnf = scanner.nextLine();
-					System.out.print("Valor do Saque: ");
+					System.out.print("Valor da Transferência: ");
 					double valorTrasnf = scanner.nextDouble();
 					scanner.nextLine();
 					Conta contaTransf = banco.buscarContaPorAgenciaENumero(agenciaTrasnf, numeroTrasnf);
 					if (contaTransf != null) {
 						contaTransf.transferir(valorTrasnf, contaTransf);
-						System.out.println("Transferência realizada com sucesso");
+						System.out.println("Transferência realizada com sucesso!");
 					} else {
 						System.out.println("Conta não encontrada");
 					}

@@ -20,7 +20,7 @@ public abstract class Conta implements IConta {
 	@Override
 	public void depositar(double valor) {
 		saldo += valor;
-		extrato.add("Depósito de R$ " + valor + " Saldo: R$ " + saldo);
+		extrato.add("Depósito de R$ " + valor + " | Saldo: R$ " + saldo);
 	}
 
 	@Override

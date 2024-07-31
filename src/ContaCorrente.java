@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta {
 	 public void sacar(double valor) {
 		 if (saldo + limite >= valor) {
 			 saldo -= valor;
-			 extrato.add("Saque de R$ " + valor + " Saldo: R$ " + saldo);
+			 extrato.add("Saque de R$ " + valor + " | Saldo: R$ " + saldo);
 		 } else {
 			 extrato.add("Tentativa de saque de R$ " + valor + " falhou. Saldo insuficiente.");
 			 System.out.println("Saldo insuficiente para saque.");
@@ -23,7 +23,7 @@ public class ContaCorrente extends Conta {
 		if (saldo >= valor) {
 			this.sacar(valor);
 			contaDestino.depositar(valor);
-			extrato.add("Transferência de R$ " + valor + "Saldo: R$ " + saldo);
+			extrato.add("Transferência de R$ " + valor + " | Saldo: R$ " + saldo);
 		} else {
 			extrato.add("Tentativa de transfrência de R$ " + valor + " falhou. Saldo insuficiente.");
 			System.out.println("Saldo insuficiente para transferência.");
