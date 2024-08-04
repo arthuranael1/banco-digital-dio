@@ -1,18 +1,40 @@
+import model.Agencia;
+import model.Banco;
+import model.Cliente;
+import model.Conta;
+import model.ContaCorrente;
+import model.ContaPoupanca;
+import resource.AgenciaResource;
+import resource.BancoResource;
+import resource.ContaResource;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Cliente venilton = new Cliente();
-		venilton.setNome("Venilton");
-		
-		Conta cc = new ContaCorrente(venilton);
-		Conta poupanca = new ContaPoupanca(venilton);
+		BancoResource bancoResource = new BancoResource();
+		AgenciaResource agenciaResource = new AgenciaResource();
+		ContaResource contaResource = new ContaResource();
 
-		cc.depositar(100);
-		cc.transferir(100, poupanca);
-		
-		cc.imprimirExtrato();
-		poupanca.imprimirExtrato();
+		Banco bradesco = new Banco("Bradesco");
+		Agencia agencia = new Agencia(bradesco);
+
+		bancoResource.saveAgencia(bradesco, agencia);
+
+		Cliente leo = new Cliente("Leo");
+		Conta cc = new ContaCorrente(agencia, leo);
+		Conta poupanca = new ContaPoupanca(agencia, leo);
+
+		agenciaResource.saveConta(agencia, cc);
+		agenciaResource.saveConta(agencia, poupanca);
+
+		contaResource.depositar(cc, 100);
+		contaResource.transferir(cc, 100, poupanca);
+
+		contaResource.imprimirExtrato(cc);
+		contaResource.imprimirExtrato(poupanca);
+
+		bancoResource.getAgencias(bradesco);
+
+		agenciaResource.getClientes(agencia);
 	}
-
 }
