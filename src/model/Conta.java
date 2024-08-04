@@ -2,25 +2,24 @@ package model;
 
 public abstract class Conta {
 	
-	private static final int AGENCIA_PADRAO = 1;
 	private static int id = 1;
 
-	protected int agencia;
 	protected int numero;
 	protected double saldo;
+	protected Agencia agencia;
 	protected Cliente cliente;
 
-	public Conta(Cliente cliente) {
-		this.agencia = Conta.AGENCIA_PADRAO;
+	public Conta(Agencia agencia, Cliente cliente) {
+		this.agencia = agencia;
 		this.numero = id++;
 		this.cliente = cliente;
 	}
 
-	public int getAgencia() {
+	public Agencia getAgencia() {
 		return agencia;
 	}
 
-	public void setAgencia(int agencia) {
+	public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
 	}
 

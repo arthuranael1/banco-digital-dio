@@ -2,7 +2,7 @@ package model;
 
 public class ContaPoupanca extends Conta {
 
-	public ContaPoupanca(Cliente cliente) {
-		super(cliente);
+	public ContaPoupanca(Agencia agencia, Cliente cliente) {
+		super(agencia, cliente);
 	}
 }

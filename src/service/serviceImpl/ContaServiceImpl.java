@@ -23,9 +23,9 @@ public class ContaServiceImpl implements ContaService {
 
     @Override
     public void imprimirExtrato(Conta conta) {
-        System.out.println("====== Extrato da Conta ======");
+        System.out.println("\n====== Extrato da Conta ======");
 		System.out.println(String.format("Titular: %s", conta.getCliente().getNome()));
-		System.out.println(String.format("Agencia: %d", conta.getAgencia()));
+		System.out.println(String.format("Agencia: %d", conta.getAgencia().getNumero()));
 		System.out.println(String.format("Numero: %d", conta.getNumero()));
 		System.out.println(String.format("Saldo: %.2f", conta.getSaldo()));
     }
