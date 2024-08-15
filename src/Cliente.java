@@ -4,7 +4,11 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String endereço;
-	private String telefone;
+	public Cliente(String endereço) {
+        this.endereço = endereço;
+    }
+
+    private String telefone;
 
 	public Cliente(String nome, String cpf, String endereço, String telefone) {
 		this.nome = nome;
