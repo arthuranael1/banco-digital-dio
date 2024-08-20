@@ -1,47 +1,59 @@
-public public class CartaoCredito {
-    private String numeroCartao;
-    private String nomeTitular;
+public class CartaoCredito {
+    private String numero;
+    private String titular;
     private String validade;
-    private double limite;
+    private double limiteCredito;
     private double saldoDevedor;
 
-    public CartaoCredito(String numeroCartao, String nomeTitular, String validade, double limite) {
-        this.numeroCartao = numeroCartao;
-        this.nomeTitular = nomeTitular;
+    public CartaoCredito(String numero, String titular, String validade, double limiteCredito) {
+        this.numero = numero;
+        this.titular = titular;
         this.validade = validade;
-        this.limite = limite;
+        this.limiteCredito = limiteCredito;
         this.saldoDevedor = 0;
     }
 
     public void realizarCompra(double valor) {
-        if (valor <= limite - saldoDevedor) {
+        if (valor <= (limiteCredito - saldoDevedor)) {
             saldoDevedor += valor;
         } else {
-            System.out.println("Limite insuficiente.");
+            System.out.println("Saldo insuficiente para realizar a compra.");
         }
-    }
-
-    public void pagarFatura(double valor) {
-        saldoDevedor -= valor;
     }
 
     public double getSaldoDevedor() {
         return saldoDevedor;
     }
 
-    public String getNumeroCartao() {
-        return numeroCartao;
+    public String getNumero() {
+        return numero;
     }
 
-    public String getNomeTitular() {
-        return nomeTitular;
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
     }
 
     public String getValidade() {
         return validade;
     }
 
-    public double getLimite() {
-        return limite;
+    public void setValidade(String validade) {
+        this.validade = validade;
+    }
+
+    public double getLimiteCredito() {
+        return limiteCredito;
+    }
+
+    public void setLimiteCredito(double limiteCredito) {
+        this.limiteCredito = limiteCredito;
     }
 }
