@@ -1,11 +1,11 @@
-public public class CartaoDeCredito {
+public public class CartaoCredito {
     private String numeroCartao;
     private String nomeTitular;
     private String validade;
     private double limite;
     private double saldoDevedor;
 
-    public CartaoDeCredito(String numeroCartao, String nomeTitular, String validade, double limite) {
+    public CartaoCredito(String numeroCartao, String nomeTitular, String validade, double limite) {
         this.numeroCartao = numeroCartao;
         this.nomeTitular = nomeTitular;
         this.validade = validade;
@@ -44,7 +44,4 @@ public public class CartaoDeCredito {
     public double getLimite() {
         return limite;
     }
-}
- CartaoCredito {
-    
 }
