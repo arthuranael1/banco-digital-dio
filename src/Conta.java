@@ -49,4 +49,16 @@ public abstract class Conta implements IConta {
 		System.out.println(String.format("Numero: %d", this.numero));
 		System.out.println(String.format("Saldo: %.2f", this.saldo));
 	}
+
+	public void fazerEmprestimo(double valor){
+		double saldo = this.getSaldo();
+		if(saldo  == 0){
+			System.out.println("Necessário saldo maior que " + saldo + " para realizar empréstimo");
+		}
+		else{
+			saldo += valor;
+		}
+	}
+
+	
 }
