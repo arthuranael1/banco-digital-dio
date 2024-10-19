@@ -8,11 +8,18 @@ public class Main {
 		Conta cc = new ContaCorrente(venilton);
 		Conta poupanca = new ContaPoupanca(venilton);
 
-		cc.depositar(100);
-		cc.transferir(100, poupanca);
+		
 		
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
+
+		cc.fazerEmprestimo(1000);
+		cc.imprimirExtrato();
+
+		poupanca.fazerEmprestimo(1000);
+		poupanca.imprimirExtrato();
+
+
 	}
 
 }
